@@ -7,9 +7,11 @@ load_dotenv()
 
 model = ChatMistralAI(
     model="mistral-small-2603",
-    api_key=os.getenv("MISTRAL_API_KEY")
+    api_key=os.getenv("MISTRAL_API_KEY"),
+    temperature=0.9,
+    max_tokens=20
 )
 
-response = model.invoke("Explain what is useState hook in react.")
+response = model.invoke("write a peom on ai.")
 
 print(response.content)
